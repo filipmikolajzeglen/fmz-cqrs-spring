@@ -16,6 +16,11 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
+/**
+ * Spring configuration for FMZ CQRS.
+ * Registers the Dispatcher bean with support for CommandHandler and QueryHandler,
+ * as well as logging and transactional interceptors.
+ */
 @Slf4j
 @Configuration
 @EnableTransactionManagement

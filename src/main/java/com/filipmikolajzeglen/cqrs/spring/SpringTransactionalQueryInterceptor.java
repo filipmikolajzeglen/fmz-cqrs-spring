@@ -7,6 +7,10 @@ import com.filipmikolajzeglen.cqrs.core.TransactionalQueryInterceptor;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
 
+/**
+ * Transactional query interceptor for Spring.
+ * Marks query handling as read-only transactional using Spring's @Transactional(readOnly = true) support.
+ */
 @Component
 public class SpringTransactionalQueryInterceptor extends TransactionalQueryInterceptor
 {

@@ -6,6 +6,10 @@ import com.filipmikolajzeglen.cqrs.core.TransactionalCommandInterceptor;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
 
+/**
+ * Transactional command interceptor for Spring.
+ * Marks command handling as transactional using Spring's @Transactional support.
+ */
 @Component
 public class SpringTransactionalCommandInterceptor extends TransactionalCommandInterceptor
 {
