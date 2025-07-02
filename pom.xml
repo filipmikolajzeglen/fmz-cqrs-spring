@@ -1,79 +1,98 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-      xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-   <modelVersion>4.0.0</modelVersion>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
 
-   <parent>
-      <groupId>com.filipmikolajzeglen</groupId>
-      <artifactId>fmz-maven-common-parent</artifactId>
-      <version>1.0.2</version>
-   </parent>
+  <parent>
+    <groupId>com.filipmikolajzeglen</groupId>
+    <artifactId>fmz-maven-common-parent</artifactId>
+    <version>1.0.2</version>
+  </parent>
 
-   <groupId>com.filipmikolajzeglen.cqrs</groupId>
-   <artifactId>fmz-cqrs-spring</artifactId>
-   <version>1.0.0-SNAPSHOT</version>
+  <groupId>com.filipmikolajzeglen.cqrs</groupId>
+  <artifactId>fmz-cqrs-spring</artifactId>
+  <version>1.0.0-SNAPSHOT</version>
 
-   <name>FMZ - CQRS - Spring</name>
+  <name>FMZ - CQRS - Spring</name>
 
-   <url>https://github.com/filipmikolajzeglen</url>
-   <inceptionYear>2025</inceptionYear>
-   <licenses>
-      <license>
-         <name>Apache 2.0</name>
-         <url>https://www.apache.org/licenses/LICENSE-2.0.txt</url>
-      </license>
-   </licenses>
-   <developers>
-      <developer>
-         <id>FMZ</id>
-         <name>Filip Mikołaj Żegleń</name>
-         <email>filipmikolajzeglen@gmail.com</email>
-         <roles>
-            <role>Developer</role>
-         </roles>
-      </developer>
-   </developers>
+  <url>https://github.com/filipmikolajzeglen</url>
+  <inceptionYear>2025</inceptionYear>
+  <licenses>
+    <license>
+      <name>Apache 2.0</name>
+      <url>https://www.apache.org/licenses/LICENSE-2.0.txt</url>
+    </license>
+  </licenses>
+  <developers>
+    <developer>
+      <id>FMZ</id>
+      <name>Filip Mikołaj Żegleń</name>
+      <email>filipmikolajzeglen@gmail.com</email>
+      <roles>
+        <role>Developer</role>
+      </roles>
+    </developer>
+  </developers>
 
-   <scm>
-      <connection>scm:git:https://github.com/filipmikolajzeglen/fmz-cqrs-spring.git</connection>
-      <developerConnection>scm:git:git@github.com:filipmikolajzeglen/fmz-cqrs-spring.git</developerConnection>
-      <tag>HEAD</tag>
-      <url>https://github.com/filipmikolajzeglen/fmz-cqrs-spring</url>
-   </scm>
+  <scm>
+    <connection>scm:git:https://github.com/filipmikolajzeglen/fmz-cqrs-spring.git</connection>
+    <developerConnection>scm:git:git@github.com:filipmikolajzeglen/fmz-cqrs-spring.git</developerConnection>
+    <tag>HEAD</tag>
+    <url>https://github.com/filipmikolajzeglen/fmz-cqrs-spring</url>
+  </scm>
 
-   <dependencies>
-      <dependency>
-         <groupId>com.filipmikolajzeglen.cqrs</groupId>
-         <artifactId>fmz-cqrs-core</artifactId>
-         <version>1.0.0-SNAPSHOT</version>
-      </dependency>
+  <properties>
+    <version.fmz-cqrs>1.0.0-SNAPSHOT</version.fmz-cqrs>
+  </properties>
 
-      <dependency>
-         <groupId>org.springframework</groupId>
-         <artifactId>spring-context</artifactId>
-         <optional>true</optional>
-      </dependency>
-      <dependency>
-         <groupId>org.springframework</groupId>
-         <artifactId>spring-tx</artifactId>
-         <optional>true</optional>
-      </dependency>
+  <dependencies>
+    <dependency>
+      <groupId>com.filipmikolajzeglen.cqrs</groupId>
+      <artifactId>fmz-cqrs-core</artifactId>
+      <version>${version.fmz-cqrs}</version>
+    </dependency>
+    <dependency>
+      <groupId>com.filipmikolajzeglen.cqrs</groupId>
+      <artifactId>fmz-cqrs-persistence</artifactId>
+      <version>${version.fmz-cqrs}</version>
+    </dependency>
 
-      <dependency>
-         <groupId>org.springframework.boot</groupId>
-         <artifactId>spring-boot-starter-test</artifactId>
-      </dependency>
+    <dependency>
+      <groupId>jakarta.persistence</groupId>
+      <artifactId>jakarta.persistence-api</artifactId>
+      <version>3.2.0</version>
+      <optional>true</optional>
+    </dependency>
 
-      <dependency>
-         <groupId>org.apache.groovy</groupId>
-         <artifactId>groovy</artifactId>
-         <scope>test</scope>
-      </dependency>
-      <dependency>
-         <groupId>org.spockframework</groupId>
-         <artifactId>spock-core</artifactId>
-         <scope>test</scope>
-      </dependency>
-   </dependencies>
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-context</artifactId>
+      <optional>true</optional>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-tx</artifactId>
+      <optional>true</optional>
+    </dependency>
+
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-data-jpa</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-test</artifactId>
+    </dependency>
+
+    <dependency>
+      <groupId>org.apache.groovy</groupId>
+      <artifactId>groovy</artifactId>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.spockframework</groupId>
+      <artifactId>spock-core</artifactId>
+      <scope>test</scope>
+    </dependency>
+  </dependencies>
 
 </project>

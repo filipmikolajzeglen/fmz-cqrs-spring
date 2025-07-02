@@ -22,7 +22,7 @@ import org.springframework.context.annotation.Import;
 @Target(ElementType.TYPE)
 @Retention(RetentionPolicy.RUNTIME)
 @Documented
-@Import(SpringDispatcherConfiguration.class)
+@Import({SpringDispatcherConfiguration.class, SpringPersistenceModuleConfiguration.class})
 public @interface EnableCqrs
 {
 }
