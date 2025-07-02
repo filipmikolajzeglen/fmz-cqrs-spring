@@ -10,7 +10,7 @@
 
   <groupId>com.filipmikolajzeglen.cqrs</groupId>
   <artifactId>fmz-cqrs-spring</artifactId>
-  <version>1.0.0-SNAPSHOT</version>
+  <version>1.0.1-SNAPSHOT</version>
 
   <name>FMZ - CQRS - Spring</name>
 
@@ -41,7 +41,7 @@
   </scm>
 
   <properties>
-    <version.fmz-cqrs>1.0.0-SNAPSHOT</version.fmz-cqrs>
+    <version.fmz-cqrs>1.0.0</version.fmz-cqrs>
   </properties>
 
   <dependencies>
