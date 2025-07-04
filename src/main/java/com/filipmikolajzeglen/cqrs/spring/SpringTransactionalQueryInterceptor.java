@@ -1,8 +1,8 @@
 package com.filipmikolajzeglen.cqrs.spring;
 
-import com.filipmikolajzeglen.cqrs.core.Pagination;
 import com.filipmikolajzeglen.cqrs.core.Query;
 import com.filipmikolajzeglen.cqrs.core.QueryInvocation;
+import com.filipmikolajzeglen.cqrs.core.ResultStrategy;
 import com.filipmikolajzeglen.cqrs.core.TransactionalQueryInterceptor;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
@@ -16,9 +16,9 @@ public class SpringTransactionalQueryInterceptor extends TransactionalQueryInter
 {
    @Override
    @Transactional(readOnly = true)
-   public <TYPE, PAGE> PAGE intercept(
-         Query<TYPE> query, Pagination<TYPE, PAGE> pagination, QueryInvocation<TYPE, PAGE> next)
+   public <TYPE, RESULT> RESULT intercept(
+         Query<TYPE> query, ResultStrategy<TYPE, RESULT> resultStrategy, QueryInvocation<TYPE, RESULT> next)
    {
-      return super.intercept(query, pagination, next);
+      return super.intercept(query, resultStrategy, next);
    }
 }
