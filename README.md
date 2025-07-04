@@ -16,7 +16,7 @@ Add the dependency to your `pom.xml`:
 <dependency>
   <groupId>com.filipmikolajzeglen.cqrs</groupId>
   <artifactId>fmz-cqrs-spring</artifactId>
-  <version>1.0.2</version>
+  <version>1.0.3</version>
 </dependency>
 ```
 
