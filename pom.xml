@@ -4,13 +4,13 @@
 
   <parent>
     <groupId>com.filipmikolajzeglen</groupId>
-    <artifactId>fmz-maven-common-parent</artifactId>
-    <version>1.0.2</version>
+    <artifactId>fmz-parent</artifactId>
+    <version>2.0.3</version>
   </parent>
 
   <groupId>com.filipmikolajzeglen.cqrs</groupId>
   <artifactId>fmz-cqrs-spring</artifactId>
-  <version>1.0.6-SNAPSHOT</version>
+  <version>1.0.7</version>
 
   <name>FMZ - CQRS - Spring</name>
 
@@ -44,21 +44,18 @@
     <dependency>
       <groupId>com.filipmikolajzeglen.cqrs</groupId>
       <artifactId>fmz-cqrs-core</artifactId>
-      <version>2.0.0</version>
+      <optional>true</optional>
     </dependency>
     <dependency>
       <groupId>com.filipmikolajzeglen.cqrs</groupId>
       <artifactId>fmz-cqrs-persistence</artifactId>
-      <version>2.0.0</version>
+      <optional>true</optional>
     </dependency>
-
     <dependency>
       <groupId>jakarta.persistence</groupId>
       <artifactId>jakarta.persistence-api</artifactId>
-      <version>3.2.0</version>
       <optional>true</optional>
     </dependency>
-
     <dependency>
       <groupId>org.springframework</groupId>
       <artifactId>spring-context</artifactId>
@@ -69,16 +66,17 @@
       <artifactId>spring-tx</artifactId>
       <optional>true</optional>
     </dependency>
-
     <dependency>
       <groupId>org.springframework.boot</groupId>
       <artifactId>spring-boot-starter-data-jpa</artifactId>
+      <optional>true</optional>
     </dependency>
+
     <dependency>
       <groupId>org.springframework.boot</groupId>
       <artifactId>spring-boot-starter-test</artifactId>
+      <scope>test</scope>
     </dependency>
-
     <dependency>
       <groupId>org.apache.groovy</groupId>
       <artifactId>groovy</artifactId>
@@ -90,5 +88,4 @@
       <scope>test</scope>
     </dependency>
   </dependencies>
-
 </project>
