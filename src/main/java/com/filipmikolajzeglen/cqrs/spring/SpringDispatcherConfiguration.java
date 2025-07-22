@@ -9,8 +9,6 @@ import com.filipmikolajzeglen.cqrs.core.DispatcherRegistry;
 import com.filipmikolajzeglen.cqrs.core.LoggingCommandInterceptor;
 import com.filipmikolajzeglen.cqrs.core.LoggingQueryInterceptor;
 import com.filipmikolajzeglen.cqrs.core.QueryHandler;
-import com.filipmikolajzeglen.cqrs.core.TransactionalCommandInterceptor;
-import com.filipmikolajzeglen.cqrs.core.TransactionalQueryInterceptor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -38,11 +36,11 @@ public class SpringDispatcherConfiguration
             new DispatcherRegistry(commandHandlers, queryHandlers),
             List.of(
                   new LoggingCommandInterceptor(),
-                  new TransactionalCommandInterceptor()
+                  new SpringTransactionalCommandInterceptor()
             ),
             List.of(
                   new LoggingQueryInterceptor(),
-                  new TransactionalQueryInterceptor()
+                  new SpringTransactionalQueryInterceptor()
             )
       );
    }

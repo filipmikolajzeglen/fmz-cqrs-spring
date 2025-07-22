@@ -16,7 +16,7 @@ Add the dependency to your `pom.xml`:
 <dependency>
   <groupId>com.filipmikolajzeglen.cqrs</groupId>
   <artifactId>fmz-cqrs-spring</artifactId>
-  <version>1.0.8</version>
+  <version>1.0.9</version>
 </dependency>
 ```
 
@@ -40,7 +40,7 @@ repositories {
     maven {
         url = uri("https://maven.pkg.github.com/filipmikolajzeglen")
         credentials {
-            username = project.findProperty("gpr.user") ?: System.getenv("USERNAME_GITHUB")
+            username = project.findProperty("gpr.userA") ?: System.getenv("USERNAME_GITHUB")
             password = project.findProperty("gpr.key") ?: System.getenv("TOKEN_GITHUB")
         }
     }
